@@ -4,6 +4,7 @@ import java.security.KeyStore;
 import javax.net.*;
 import javax.net.ssl.*;
 import javax.security.cert.X509Certificate;
+import java.math.*;
 
 public class server implements Runnable {
     private ServerSocket serverSocket = null;
@@ -21,9 +22,13 @@ public class server implements Runnable {
             SSLSession session = socket.getSession();
             X509Certificate cert = (X509Certificate)session.getPeerCertificateChain()[0];
             String subject = cert.getSubjectDN().getName();
+            String issuer = cert.getIssuerDN().getName();
     	    numConnectedClients++;
             System.out.println("client connected");
             System.out.println("client name (cert subject DN field): " + subject);
+            System.out.println("(issuer): " + issuer);
+            BigInteger bsn = cert.getSerialNumber();
+            System.out.println("(SerialNumber): " + bsn);
             System.out.println(numConnectedClients + " concurrent connection(s)\n");
 
             PrintWriter out = null;

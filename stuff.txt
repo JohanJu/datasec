@@ -7,3 +7,52 @@ B -ext ext -extfile ext
 C stuff
 D ?
 E key private key, trust integrity
+
+F:
+Server Started
+
+client connected
+client name (cert subject DN field): CN=DwightLidman(dat13dli)/HannaLindblad(dat13hli)/JohanJu(elt12jju)/OttoNilsson(dat13oni), OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown
+1 concurrent connection(s)
+
+
+
+args[0] = localhost
+args[1] = 9876
+
+socket before handshake:
+1ee8d9a5[SSL_NULL_WITH_NULL_NULL: Socket[addr=localhost/127.0.0.1,port=9876,localport=55506]]
+
+certificate name (subject DN field) on certificate received from server:
+CN=MyServer, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown
+
+socket after handshake:
+1ee8d9a5[TLS_DHE_DSS_WITH_AES_256_CBC_SHA: Socket[addr=localhost/127.0.0.1,port=9876,localport=55506]]
+
+secure connection established
+
+G enables client authentication
+
+H:
+socket before handshake:
+31e956bd[SSL_NULL_WITH_NULL_NULL: Socket[addr=localhost/127.0.0.1,port=9876,localport=55520]]
+
+certificate name (subject DN field) on certificate received from server:
+CN=MyServer, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown
+
+(issuer): CN=CA, O=Internet Widgits Pty Ltd, ST=Some-State, C=AU
+(SerialNumber): 17123100185684008431
+socket after handshake:
+31e956bd[TLS_DHE_DSS_WITH_AES_256_CBC_SHA: Socket[addr=localhost/127.0.0.1,port=9876,localport=55520]]
+
+secure connection established
+
+
+
+Server Started
+
+client connected
+client name (cert subject DN field): CN=DwightLidman(dat13dli)/HannaLindblad(dat13hli)/JohanJu(elt12jju)/OttoNilsson(dat13oni), OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown
+(issuer): CN=CA, O=Internet Widgits Pty Ltd, ST=Some-State, C=AU
+(SerialNumber): 17123100185684008430
+1 concurrent connection(s)

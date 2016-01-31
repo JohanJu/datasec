@@ -4,6 +4,7 @@ import javax.net.ssl.*;
 import javax.security.cert.X509Certificate;
 import java.security.KeyStore;
 import java.security.cert.*;
+import java.math.*;
 
 /*
  * This example shows how to set up a key manager to perform client
@@ -65,7 +66,11 @@ public class client {
             SSLSession session = socket.getSession();
             X509Certificate cert = (X509Certificate)session.getPeerCertificateChain()[0];
             String subject = cert.getSubjectDN().getName();
+            String issuer = cert.getIssuerDN().getName();
             System.out.println("certificate name (subject DN field) on certificate received from server:\n" + subject + "\n");
+            System.out.println("(issuer): " + issuer);
+            BigInteger bsn = cert.getSerialNumber();
+            System.out.println("(SerialNumber): " + bsn);
             System.out.println("socket after handshake:\n" + socket + "\n");
             System.out.println("secure connection established\n\n");
 
