@@ -4,39 +4,6 @@ DwightLidman(dat13dli)/HannaLindblad(dat13hli)/JohanJu(elt12jju)/OttoNilsson(dat
 
 A -serialnbr
 B -ext ext -extfile ext
-C 
-
-
-keytool -keystore clientkeystore -genkey -alias client
-keytool -list -keystore clienttruststore 
-keytool -list -keystore clientkeystore 
-keytool -keystore clientkeystore -certreq -alias client -keyalg rsa -file client.csr
-keytool -genkey -v -alias client -keyalg RSA -keystore clientkeystore
-keytool -keystore clientkeystore -genkey -alias client
-keytool -keystore clientkeystore -certreq -alias client -keyalg rsa -file client.csr
-git add -A
-git commit -m part3
-openssl x509 -req -days 360 -in client.csr -CA CA.crt -CAkey CA.key -CAcreateserial -out client.crt
-keytool -import -keystore clientkeystore -file CA.cer -alias CA
-keytool -import -keystore clientkeystore -file CA.crt -alias CA
-keytool -import -keystore clientkeystore -file client.crt -alias client
-git stash
-git pull
-git reset  
-git pull
-git reset --hard HEAD
-openssl x509 -req -days 360 -in client.csr -CA CA.crt -CAkey CA.key -CAcreateserial -out client.crt
-keytool -import -keystore clientkeystore -file client.crt -alias client
-keytool -list -keystore clientkeystore 
-keytool -import -keystore clientkeystore -file CA.crt -alias CA
-keytool -import -keystore clientkeystore -file client.crt -alias client
-git add -A
-git commit -m part6
-keytool -list -keystore clientkeystore 
-keytool -list -v -keystore clientkeystore 
-keytool
-keytool -gencert -help
-git status
-git commit -a -m part8
-git status
-git log
+C stuff
+D ?
+E key private key, trust integrity
