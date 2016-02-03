@@ -8,7 +8,7 @@ openssl req -new -x509 -key ca.key -out ca.crt -subj "/C=SE/L=Lund/O=LTH/CN=CA"
 echo 2.1.2
 keytool -import -file ca.crt -keystore clienttruststore -storepass password -noprompt
 echo 2.1.3
-keytool -genkeypair -dname "CN=stil_1/stil_2/stil_3/stil_4" -alias studentkey -keypass password -keystore clientkeystore -storepass password
+keytool -genkeypair -dname "CN=Hannah Lindblad (elt13hli)/Dwight Lidman (dat13dli)/Johan Ju (elt12jju)/Otto Nilsson (ael09oni)" -alias studentkey -keypass password -keystore clientkeystore -storepass password
 echo 2.1.4
 keytool -certreq -file lth.csr -alias studentkey -keystore clientkeystore -storepass password
 echo 2.1.5
@@ -32,7 +32,6 @@ keytool -importcert -alias cakey2 -file ca.crt -keystore serverkeystore -storepa
 keytool -importcert -alias studentkey2 -trustcacerts -file lth.crt -keystore serverkeystore -storepass password -noprompt
 echo 2.1.10
 keytool -importkeystore -srckeystore clienttruststore -destkeystore servertruststore -srcstorepass password -deststorepass password
-#keytool -import -file ca.crt -keystore servertruststore -storepass password -noprompt
 
 
 echo Finished!
